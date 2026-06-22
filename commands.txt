@@ -1,0 +1,54 @@
+Create virtual environment
+python -m venv venv
+
+
+Activate environment
+venv\Scripts\activate
+
+
+install Jupiter inside venv
+pip install jupyter ipykernel
+
+register the kernel
+python -m ipykernel install --user --name customer_retention_env --display-name "Customer Retention (venv)"
+
+
+verify kernel exists
+jupyter kernelspec list
+
+select interpreter
+Ctrl + Shift + P
+Python: Select Interpreter
+select Python 3.10 (venv)
+
+select notebook kerenel
+Select Kernel
+and select
+Python Environments
+    └── venv
+
+
+
+
+install required packages
+pip install pandas numpy scikit-learn matplotlib seaborn plotly jupyter
+pip install xgboost shap
+
+
+
+create requirement.txt
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+
+pip install xgboost
+pip install shap
+
+pip install fastapi uvicorn
+uvicorn api.main:app --reload
+
+
+pip install fastapi uvicorn streamlit
+streamlit --version
+streamlit run ui/app.py
+
